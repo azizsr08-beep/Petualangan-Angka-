@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petualangan Angka – Belajar Penjumlahan Kelas II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF6DC;--card:#FFFFFF;--ink:#1F2A44;--mute:#53607f;--sun:#FFC93C;--sky:#3AA6FF;--mint:#2EC4A0;--coral:#FF6B6B;--line:#1F2A44;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17203a;--card:#222e52;--ink:#fff6dc;--mute:#b6c0de;--line:#fff6dc}}
+:root[data-theme="dark"]{--bg:#17203a;--card:#222e52;--ink:#fff6dc;--mute:#b6c0de;--line:#fff6dc}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3,.f{font-family:Fredoka,"Trebuchet MS",sans-serif;line-height:1.15;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 40px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;display:flex;gap:8px;overflow-x:auto}
+nav button{flex:none;font:600 16px Fredoka,sans-serif;color:var(--ink);background:var(--card);border:3px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;box-shadow:0 4px 0 var(--line)}
+nav button[aria-current=true]{background:var(--sun);color:#1F2A44}
+nav button:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:3px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 6px 0 var(--line);margin:16px 0}
+.hero{background:var(--sky);color:#fff;border:3px solid var(--line);border-radius:28px;padding:26px 20px;box-shadow:0 8px 0 var(--line);margin-top:8px;display:grid;gap:18px;grid-template-columns:1.2fr 1fr}
+.hero h1{font-size:clamp(2rem,6vw,3.2rem);text-shadow:0 3px 0 #1F2A44}
+.hero p{margin:10px 0 0;font-weight:700}
+.play{background:#fff;color:#1F2A44;border:3px solid #1F2A44;border-radius:22px;padding:14px;text-align:center}
+.fruits{min-height:64px;font-size:26px;letter-spacing:2px;word-break:break-all}
+.eq{font:700 2rem Fredoka,sans-serif}
+.btn{font:600 16px Fredoka,sans-serif;border:3px solid #1F2A44;border-radius:14px;background:var(--sun);color:#1F2A44;padding:8px 14px;cursor:pointer;box-shadow:0 4px 0 #1F2A44;margin:4px;text-decoration:none;display:inline-block}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #1F2A44}
+.id{display:flex;flex-wrap:wrap;gap:10px 28px}
+.id b{display:block;font:600 .85rem Nunito;color:var(--mute)}
+.id span{font:600 1.25rem Fredoka}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.menu .card{margin:0;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.menu .em{font-size:2.2rem}
+h2{font-size:2rem;margin:18px 0 6px}h3{font-size:1.25rem;margin:0 0 6px}
+.tag{display:inline-block;background:var(--mint);color:#10241f;border:2px solid var(--line);border-radius:999px;padding:0 12px;font:600 .95rem Fredoka;margin:2px 4px 2px 0}
+table{border-collapse:collapse;width:100%}th,td{border:2px solid var(--line);padding:8px;text-align:left;vertical-align:top;font-size:.95rem}th{background:var(--sun);color:#1F2A44}
+.sc{overflow-x:auto}
+details{background:var(--card);border:3px solid var(--line);border-radius:16px;margin:10px 0;padding:10px 14px}
+summary{font:600 1.15rem Fredoka;cursor:pointer}
+ul,ol{padding-left:22px;margin:8px 0}
+.slide{min-height:230px;border:3px solid var(--line);border-radius:22px;padding:22px;color:#1F2A44}
+.slide h3{font-size:1.6rem}.slide .big{font:700 2.4rem Fredoka;margin:8px 0}
+.ctl{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.q{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+.q input{width:84px;font:700 18px Fredoka;padding:6px;border:3px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+.ok{color:#0f8a6c;font-weight:800}.no{color:#d9363e;font-weight:800}
+.vid{position:relative;padding-top:56.25%;border:3px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 6px 0 var(--line);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+footer{text-align:center;color:var(--mute);margin-top:30px;font-weight:700}
+@media (max-width:700px){.hero{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.fruits span{display:inline-block;animation:pop .25s}@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav id="nav" aria-label="Menu utama"></nav>
+
+<section id="beranda" class="on">
+ <div class="hero">
+  <div>
+   <h1>Petualangan Angka!</h1>
+   <p>Ayo belajar penjumlahan bilangan cacah bersama Rara dan buah-buahan. Lihat, coba, gambar, lalu tulis angkanya.</p>
+  </div>
+  <div class="play" aria-live="polite">
+   <div class="f">Coba tambahkan jeruk!</div>
+   <div class="fruits" id="fruits"></div>
+   <div class="eq" id="eq">0</div>
+   <button class="btn" id="add">+ 1 jeruk</button><button class="btn" id="reset" style="background:#fff">Ulang</button>
+  </div>
+ </div>
+
+ <div class="card">
+  <h3>Pemilik Website</h3>
+  <div class="id">
+   <div><b>Nama pemilik</b><span>Inka Santika</span></div>
+   <div><b>NIM</b><span>857510357</span></div>
+   <div><b>Materi</b><span>Penjumlahan Bilangan Cacah</span></div>
+   <div><b>Kelas</b><span>II SD</span></div>
+  </div>
+ </div>
+
+ <h2>Mau belajar apa hari ini?</h2>
+ <div class="menu" id="menu"></div>
+</section>
+
+<section id="rpp">
+ <h2>RPP Berbasis Teknologi</h2>
+ <div class="card">
+  <span class="tag">Matematika</span><span class="tag">Kelas II</span><span class="tag">2 × 35 menit</span><span class="tag">Pendekatan CPA</span>
+  <p>Materi: <b>Penjumlahan Bilangan Cacah dalam Kehidupan Sehari-hari</b>. Penyusun: Inka Santika (857510357). Penjumlahan dengan hasil paling banyak 20.</p>
+ </div>
+ <details open><summary>Kompetensi dasar</summary>
+  <p><b>3.4</b> Menjelaskan operasi hitung bilangan cacah yang dikaitkan dengan kehidupan sehari-hari.</p>
+  <p><b>4.4</b> Menyelesaikan masalah yang melibatkan operasi hitung bilangan cacah yang dikaitkan dengan kehidupan sehari-hari.</p></details>
+ <details><summary>Tujuan pembelajaran</summary><ul>
+  <li>Menjelaskan bahwa penjumlahan berarti menggabungkan dua kelompok benda.</li>
+  <li>Menentukan hasil penjumlahan paling banyak 20 dengan benda konkret atau gambar.</li>
+  <li>Mengubah masalah sehari-hari menjadi kalimat matematika.</li>
+  <li>Menyelesaikan sedikitnya 4 dari 5 soal dengan benar.</li>
+  <li>Menyampaikan cara memperoleh jawaban dengan santun dan percaya diri.</li></ul></details>
+ <details><summary>Materi pokok</summary>
+  <p>Penjumlahan adalah kegiatan menggabungkan dua kelompok atau lebih untuk mengetahui jumlah seluruhnya. Tanda “+” berarti ditambah dan “=” berarti sama dengan.</p>
+  <p><b>Contoh:</b> Rara punya 12 jeruk, Ibu memberi 5 jeruk lagi. 12 + 5 = 17 jeruk.</p>
+  <div class="sc"><table><tr><th>Tahap</th><th>Kegiatan</th><th>12 + 5</th></tr>
+  <tr><td>Concrete</td><td>Memakai benda nyata (tutup botol, stik es krim)</td><td>Hitung 12 benda + 5 benda = 17</td></tr>
+  <tr><td>Pictorial</td><td>Menggambar atau melihat gambar</td><td>12 lingkaran + 5 lingkaran</td></tr>
+  <tr><td>Abstract</td><td>Menulis dengan angka dan simbol</td><td>12 + 5 = 17</td></tr></table></div></details>
+ <details><summary>Langkah pembelajaran</summary>
+  <div class="sc"><table><tr><th>Tahap</th><th>Kegiatan guru</th><th>Kegiatan siswa</th></tr>
+  <tr><td>Pendahuluan (10 menit)</td><td>Salam, doa, apersepsi, menyampaikan tujuan dan aturan memakai perangkat</td><td>Menjawab salam dan pertanyaan, misalnya 4 pensil + 3 pensil</td></tr>
+  <tr><td>Concrete (15 menit)</td><td>Memutar video, mendemonstrasikan penggabungan benda</td><td>Mengamati video, menggabungkan dan menghitung benda</td></tr>
+  <tr><td>Pictorial (15 menit)</td><td>Menampilkan gambar, memberi umpan balik</td><td>Menggambar dua kelompok benda lalu menghitungnya</td></tr>
+  <tr><td>Abstract (15 menit)</td><td>Mencontohkan kalimat matematika, membagikan LKPD</td><td>Menulis operasi hitung dan mengerjakan soal cerita</td></tr>
+  <tr><td>Penutup (10 menit)</td><td>Menyimpulkan, refleksi, penguatan, doa</td><td>Menyampaikan kesimpulan dan menjawab refleksi</td></tr></table></div></details>
+ <details><summary>Penilaian dan tindak lanjut</summary><ul>
+  <li><b>Sikap:</b> tanggung jawab, keaktifan, kerja sama, dan tertib memakai teknologi (skor 1–4).</li>
+  <li><b>Pengetahuan:</b> 5 soal isian dan soal cerita, nilai minimal 80 (lihat menu Refleksi & Evaluasi).</li>
+  <li><b>Keterampilan:</b> model konkret/gambar, kalimat matematika, dan penjelasan.</li>
+  <li><b>Remedial:</b> belajar ulang dengan benda konkret dalam kelompok kecil.</li>
+  <li><b>Pengayaan:</b> membuat soal cerita penjumlahan sendiri.</li></ul></details>
+</section>
+
+<section id="cp">
+ <h2>CP dan ATP</h2>
+ <div class="card"><h3>Capaian Pembelajaran (Fase A, elemen Bilangan)</h3>
+  <p>Fokus dokumen revisi: penjumlahan dengan hasil paling banyak 20. Peserta didik menunjukkan pemahaman bilangan cacah dan dapat melakukan operasi penjumlahan bilangan cacah dalam konteks sehari-hari.</p></div>
+ <div class="card"><h3>Alur Tujuan Pembelajaran (ATP)</h3>
+  <ol>
+   <li>Menjelaskan makna penjumlahan sebagai menggabungkan dua kelompok benda.</li>
+   <li>Menjumlahkan bilangan cacah dengan benda konkret (Concrete).</li>
+   <li>Menjumlahkan dengan bantuan gambar (Pictorial).</li>
+   <li>Menuliskan kalimat matematika penjumlahan dengan angka dan simbol (Abstract).</li>
+   <li>Menyelesaikan soal cerita penjumlahan dengan hasil paling banyak 20 dan menjelaskan caranya.</li></ol></div>
+</section>
+
+<section id="media">
+ <h2>Media Pembelajaran</h2>
+ <div class="slide" id="slide"></div>
+ <div class="ctl"><button class="btn" id="prev">Sebelumnya</button><span class="f" id="cnt"></span><button class="btn" id="next">Berikutnya</button></div>
+ <div class="card"><h3>Ayo berlatih!</h3><div id="quiz"></div></div>
+</section>
+
+<section id="video">
+ <h2>Video Pembelajaran</h2>
+ <div class="vid"><iframe src="https://www.youtube.com/embed/vDJqAmc_Lzo" title="Video pembelajaran penjumlahan" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+ <p><a class="btn" href="https://www.youtube.com/watch?v=vDJqAmc_Lzo" target="_blank" rel="noopener">Buka di YouTube</a></p>
+ <div class="card"><h3>Tips menonton</h3><p>Hentikan video saat guru bertanya, ambil benda hitung, lalu coba jawab dulu sebelum video dilanjutkan.</p></div>
+</section>
+
+<section id="refleksi">
+ <h2>Refleksi dan Evaluasi</h2>
+ <div class="card"><h3>Refleksi: bagaimana belajarku hari ini?</h3>
+  <p>Pilih jawaban yang paling sesuai dengan dirimu. Tidak ada jawaban yang salah.</p>
+  <div id="rf"></div><button class="btn" id="rfbtn">Lihat pesan untukku</button><p id="rfres" class="f"></p></div>
+ <div class="card"><h3>Evaluasi: tunjukkan kemampuanmu</h3>
+  <p>Kerjakan sendiri. Kamu boleh menggambar atau memakai benda hitung. Target: benar minimal 4 dari 5 soal.</p>
+  <div id="evq"></div><button class="btn" id="evbtn">Hitung nilaiku</button><p id="evres" class="f"></p></div>
+ <details><summary>Kisi-kisi evaluasi</summary><div class="sc"><table><tr><th>Indikator</th><th>Bentuk soal</th><th>Nomor</th><th>Bobot</th></tr>
+  <tr><td>Memahami penjumlahan sebagai penggabungan</td><td>Isian singkat</td><td>1</td><td>20</td></tr>
+  <tr><td>Menjumlahkan dengan hasil sampai 20</td><td>Isian singkat</td><td>2–3</td><td>40</td></tr>
+  <tr><td>Menerapkan penjumlahan dalam soal cerita</td><td>Soal cerita</td><td>4–5</td><td>40</td></tr></table></div></details>
+ <details><summary>Kriteria nilai dan tindak lanjut</summary><ul>
+  <li><b>80–100 (tercapai):</b> pengayaan, membuat satu soal cerita sendiri dengan hasil paling banyak 20.</li>
+  <li><b>60–79 (berlatih lagi):</b> berlatih dengan gambar dan 3 soal bertahap.</li>
+  <li><b>0–59 (perlu bimbingan):</b> didampingi dengan benda nyata, lalu mengulang soal setara.</li></ul></details>
+ <details><summary>Rubrik keterampilan proses CPA</summary><div class="sc"><table><tr><th>Aspek</th><th>4 Sangat baik</th><th>3 Baik</th><th>2 Berkembang</th><th>1 Perlu bimbingan</th></tr>
+  <tr><td>Benda konkret</td><td>Mandiri dan tepat</td><td>Tepat dengan sedikit arahan</td><td>Masih ada salah hitung</td><td>Belum dapat meski dibantu</td></tr>
+  <tr><td>Gambar</td><td>Sesuai dan tepat jumlahnya</td><td>Tepat dengan sedikit koreksi</td><td>Belum lengkap</td><td>Belum dapat menggambar soal</td></tr>
+  <tr><td>Simbol matematika</td><td>Operasi dan hasil benar</td><td>Satu kesalahan kecil</td><td>Beberapa keliru</td><td>Belum dapat menulis operasi</td></tr>
+  <tr><td>Penjelasan</td><td>Runtut</td><td>Cukup jelas</td><td>Belum runtut</td><td>Belum mampu</td></tr></table></div>
+  <p>Skor maksimal 16. Nilai keterampilan = (total skor ÷ 16) × 100.</p></details>
+</section>
+
+<footer>Dibuat oleh Inka Santika · NIM 857510357</footer>
+</div>
+<script>
+var T=[["beranda","🏠","Beranda"],["rpp","📒","RPP"],["cp","🎯","CP & ATP"],["media","🎨","Media"],["video","▶️","Video"],["refleksi","🌟","Refleksi & Evaluasi"]];
+var nav=document.getElementById("nav"),menu=document.getElementById("menu");
+function go(id){T.forEach(function(t){document.getElementById(t[0]).classList.toggle("on",t[0]===id)});
+ [].forEach.call(nav.children,function(b){b.setAttribute("aria-current",b.dataset.id===id)});window.scrollTo(0,0)}
+T.forEach(function(t,i){var b=document.createElement("button");b.dataset.id=t[0];b.textContent=t[1]+" "+t[2];b.onclick=function(){go(t[0])};nav.appendChild(b);
+ if(i){var c=document.createElement("button");c.className="card";var cl=["","#FFC93C","#2EC4A0","#FF6B6B","#3AA6FF","#C9A7FF"][i];c.style.background=cl;c.style.color="#1F2A44";c.innerHTML='<div class="em">'+t[1]+'</div><h3>'+t[2]+'</h3>';c.onclick=function(){go(t[0])};menu.appendChild(c)}});
+go("beranda");
+var n=0,fr=document.getElementById("fruits"),eq=document.getElementById("eq");
+document.getElementById("add").onclick=function(){if(n<30){n++;var s=document.createElement("span");s.textContent="🍊";fr.appendChild(s);eq.textContent=n>1?"1 + ".repeat(n-1)+"1 = "+n:"1"}};
+document.getElementById("reset").onclick=function(){n=0;fr.innerHTML="";eq.textContent="0"};
+var S=[["MATEMATIKA JADI SERU!","Penjumlahan Bilangan Cacah","Belajar lewat benda nyata, gambar, dan angka.","#FFC93C"],
+["Hari ini kita belajar","Menggabungkan · Menghitung · Menjelaskan","Melihat, mencoba, menggambar, lalu menulis angka.","#9AD7FF"],
+["Pemanasan","4 pensil + 3 pensil = ?","Kamu punya 4 pensil. Teman memberi 3 pensil lagi. Berapa jumlahnya?","#8FE3CF"],
+["Apa itu penjumlahan?","4 + 3 = 7","Menggabungkan dua kelompok untuk tahu jumlah semuanya. + artinya ditambah, = artinya sama dengan.","#FFB3B3"],
+["Tiga cara belajar","Benda nyata → Gambar → Angka","Concrete, Pictorial, Abstract. Contoh: 12 + 5 = 17.","#FFC93C"],
+["Contoh bersama","12 + 5 = 17","Rara punya 12 jeruk, Ibu memberi 5 jeruk lagi. Jadi, jeruk Rara 17.","#9AD7FF"],
+["Tantangan soal cerita","9 + 6 = ?","Di toko ada 9 jeruk dan 6 mangga. Berapa jumlah seluruh buah? Ketahui, jumlahkan, lalu jawab.","#8FE3CF"],
+["Apa yang kita pelajari?","Benda → Gambar → Angka","Penjumlahan berarti menggabungkan kelompok benda. Sekarang coba jelaskan satu contoh dengan caramu sendiri!","#FFB3B3"]];
+var i=0,sl=document.getElementById("slide"),cn=document.getElementById("cnt");
+function show(){var s=S[i];sl.style.background=s[3];sl.innerHTML="<h3>"+s[0]+'</h3><div class="big">'+s[1]+"</div><p>"+s[2]+"</p>";cn.textContent=(i+1)+" / "+S.length}
+document.getElementById("prev").onclick=function(){i=(i+S.length-1)%S.length;show()};
+document.getElementById("next").onclick=function(){i=(i+1)%S.length;show()};show();
+var Q=[["6 + 7",13],["15 + 4",19],["9 + 8",17],["12 apel + 5 apel",17],["9 jeruk + 6 mangga",15]],qz=document.getElementById("quiz");
+Q.forEach(function(q,k){var d=document.createElement("div");d.className="q";
+ d.innerHTML='<span>'+(k+1)+'. '+q[0]+' = </span><input type="number" inputmode="numeric" aria-label="Jawaban '+(k+1)+'"><button class="btn">Cek</button><span></span>';
+ var inp=d.querySelector("input"),out=d.lastChild;
+ d.querySelector("button").onclick=function(){if(inp.value==="")return;var ok=+inp.value===q[1];out.className=ok?"ok":"no";out.textContent=ok?"Hebat, benar! 🎉":"Coba lagi ya 💪"};
+ qz.appendChild(d)});
+var A=["😊 Sudah paham","😐 Masih ragu","🙁 Belum paham"],B=["😊 Bisa sendiri","😐 Perlu sedikit bantuan","🙁 Perlu dibimbing"];
+var R=[["Saya memahami bahwa penjumlahan berarti menggabungkan benda.",A],["Saya dapat menghitung dengan benda nyata atau gambar.",B],["Saya dapat menulis tanda + dan = dengan benar.",B],["Bagian yang paling saya sukai hari ini adalah…",["Video","Benda hitung","Menggambar","Mengerjakan soal"]],["Hal yang masih membingungkan bagiku adalah…",["Menghitung","Menggambar","Menulis angka","Tidak ada"]]],pick=[];
+var rf=document.getElementById("rf");
+R.forEach(function(r,k){var d=document.createElement("div");d.className="q";d.innerHTML="<b style='width:100%'>"+(k+1)+". "+r[0]+"</b>";
+ r[1].forEach(function(o,j){var b=document.createElement("button");b.className="btn";b.style.background="var(--card)";b.style.color="var(--ink)";b.textContent=o;
+  b.onclick=function(){pick[k]=j;[].forEach.call(d.querySelectorAll("button"),function(x){x.style.background="var(--card)";x.style.color="var(--ink)"});b.style.background="#2EC4A0";b.style.color="#10241f"};d.appendChild(b)});rf.appendChild(d)});
+document.getElementById("rfbtn").onclick=function(){var c=0;for(var k=0;k<3;k++)if(pick[k]===0)c++;
+ document.getElementById("rfres").textContent=c>=2?"Hebat! Kamu siap belajar mandiri 🎉":"Tidak apa-apa, minta bantuan guru lagi ya. Kamu pasti bisa! 💪"};
+var E=[["Ada 5 kelereng, ditambah 4 kelereng. Berapa kelereng semuanya?",9],["8 + 7",15],["12 + 5",17],["Siti punya 9 pensil. Ibu memberi 6 pensil lagi. Berapa pensil Siti sekarang?",15],["Ada 11 apel dan 4 jeruk. Berapa jumlah seluruh buah?",15]],evi=[],evq=document.getElementById("evq");
+E.forEach(function(e,k){var d=document.createElement("div");d.className="q";d.innerHTML="<span>"+(k+1)+". "+e[0]+(k>0&&k<3?" = ":" Jawab: ")+"</span><input type='number' inputmode='numeric' aria-label='Evaluasi "+(k+1)+"'>";evi.push(d.querySelector("input"));evq.appendChild(d)});
+document.getElementById("evbtn").onclick=function(){var s=0;E.forEach(function(e,k){if(+evi[k].value===e[1]&&evi[k].value!=="")s+=20});
+ document.getElementById("evres").textContent="Nilaimu: "+s+" — "+(s>=80?"Tercapai, hebat! 🎉":s>=60?"Berlatih lagi ya, sedikit lagi! 💪":"Ayo belajar bersama guru dengan benda nyata 🍊")};
+</script>
+</body>
+</html>
